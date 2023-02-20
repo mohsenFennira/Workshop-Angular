@@ -1,0 +1,11 @@
+<p>add new Product</p>
+<form #addform="ngForm" (ngSubmit)="addForm(addform)">
+  <label for="">Name</label>
+  <input type="text" name="Name" ngModel minlength="5" required #title="ngModel">
+  <!-- <span *ngIf="title.invalid">invalid</span> -->
+  <span *ngIf="title?.errors?.['minlength'] && title.touched" style="color: red;">minlength</span>
+  <span *ngIf="title?.errors?.['required'] && title.touched">required</span>
+  <label for="">Email</label>
+  <input type="email" name="Email" [(ngModel)]="p.title">
+  <button type="submit" [disabled]="addform.invalid">Add</button>
+</form>
