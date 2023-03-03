@@ -15,14 +15,17 @@ export class ProductService {
 */
     ///url du Backend
     urlGetAllProduct="http://localhost:8081/retrieveAllProduct";
-    url="";
+    urlGetProductById="http://localhost:8081/retrieveProductById";
+
+
+    url="http://localhost:8081/addProduct";
     getAllproducts()
     {
       return this.http.get<Product[]>(this.urlGetAllProduct);
     }
     getProductById(id:number)
     {
-      return this.http.get(this.url+"/$id");
+      return this.http.get<Product>(this.urlGetProductById+"/$id");
     }
     addProduct(p:Product){
                 return this.http.post<Product>(this.url, p);

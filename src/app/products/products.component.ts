@@ -39,4 +39,7 @@ post(p:Product){
 GetAllproduct(){
   this.products.getAllproducts().subscribe(data=>{this.product=data})
 }
+GetProductById(id:number){
+this.products.getProductById(id).subscribe(data=>{this.p=data})
+}
 }

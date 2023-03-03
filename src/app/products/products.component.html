@@ -52,7 +52,7 @@ search <input type ="text" >
               <div class="d-flex justify-content-between total font-weight-bold mt-4">
                 <button class="btn btn-primary"(click)="like(p)">LIKE</button>
                 <button class="btn btn-success" (click)="buy(p)" [disabled]="p.quantity==0">BUY</button>
-                <button (click)="show(p.id)">showDetails</button>
+                <button (click)="GetProductById(p.id)">showDetails</button>
                 <a [routerLink]="['/Product/ProductDetails',p.id]">showDetails</a>
               </div>
             </div>
