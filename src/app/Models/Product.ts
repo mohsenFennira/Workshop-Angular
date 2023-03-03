@@ -3,6 +3,6 @@ id!:number;
 title!:string;
 price!:number;
 quantity!:number ;
-like!:number;
+likes!:number;
 img!:string;
 }

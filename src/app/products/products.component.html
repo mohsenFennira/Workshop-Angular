@@ -11,12 +11,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let p of productList">
+    <tr *ngFor="let p of product">
     <td>{{p.id}}</td>
     <td>{{p.title}}</td>
     <td>{{p.price}}</td>
     <td>{{p.quantity}}</td>
-    <td>{{p.like}}</td>
+    <td>{{p.likes}}</td>
     <td><button class="btn btn-primary" (click)="like(p)">LIKE</button></td>
     <td><button class="btn btn-success" (click)="buy(p)" [disabled]="p.quantity==0">BUY</button></td>
     </tr>
@@ -25,15 +25,14 @@
 search <input type ="text" >
 <div class="row">
   <div class="container">
-<section *ngFor="let p of productList" >
+<section *ngFor="let p of product" >
   <section style="background-color: #eee;">
     <div class="container py-5">
       <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6 col-xl-4">
           <div class="card text-black">
             <i class="fab fa-apple fa-lg pt-3 pb-1 px-3"></i>
-            <img [src]="p.img"
-              class="card-img-top" alt="Apple Computer" />
+
             <div class="card-body">
               <div class="text-center">
                 <h5 class="card-title">{{p.title}}</h5>
@@ -47,7 +46,7 @@ search <input type ="text" >
                   <span>Quantity</span><span>{{p.quantity}}</span>
                 </div>
                 <div class="d-flex justify-content-between">
-                  <span>Like</span><span>{{p.like}}</span>
+                  <span>Like</span><span>{{p.likes}}</span>
                 </div>
               </div>
               <div class="d-flex justify-content-between total font-weight-bold mt-4">
@@ -69,4 +68,14 @@ search <input type ="text" >
 </section>
 </div>
 </div>
+
+
+
+
+
+
+
+
+
+
 

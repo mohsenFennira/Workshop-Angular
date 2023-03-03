@@ -7,5 +7,5 @@
   <span *ngIf="title?.errors?.['required'] && title.touched">required</span>
   <label for="">Email</label>
   <input type="email" name="Email" [(ngModel)]="p.title">
-  <button type="submit" [disabled]="addform.invalid">Add</button>
+  <button type="submit" [disabled]="addform.invalid" (click)="post(p)">Add</button>
 </form>

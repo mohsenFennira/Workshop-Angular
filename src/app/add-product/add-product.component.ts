@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Product } from '../Models/Product';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-add-product',
@@ -8,9 +10,18 @@ import { Product } from '../Models/Product';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent {
-  p:Product={id: 1, title: "T-shirt 1", price: 18, quantity: 0, like: 0,img:"./assets/img/iphone.jfif"};
+  constructor(private products:ProductService,private http:HttpClient){
+
+  }
+  p:Product={id: 1, title: "T-shirt 1", price: 18, quantity: 0, likes: 0,img:"./assets/img/iphone.jfif"};
 addForm(t6: NgForm) {
 console.log(t6);
+}
+
+post(p:Product){
+  this.products.addProduct(p).subscribe(
+
+  );
 }
 
 }
