@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../Models/Product';
 import { ProductService } from '../services/product.service';
@@ -9,7 +9,7 @@ import { ProductService } from '../services/product.service';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class ProductsComponent  {
+export class ProductsComponent   {
 
   constructor(private r:Router, private products:ProductService,private http:HttpClient){
 
@@ -17,6 +17,7 @@ export class ProductsComponent  {
   ngOnInit(): void {
     this.GetAllproduct();
   }
+  
 
   product!:Product[] ;
 
@@ -41,5 +42,8 @@ GetAllproduct(){
 }
 GetProductById(id:number){
 this.products.getProductById(id).subscribe(data=>{this.p=data})
+}
+DeleteProduct(id:number){
+  this.products.deleteProduct(id).subscribe()
 }
 }

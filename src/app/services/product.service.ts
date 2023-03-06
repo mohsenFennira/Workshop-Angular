@@ -19,6 +19,7 @@ export class ProductService {
 
 
     url="http://localhost:8081/addProduct";
+    urldelete="http://localhost:8081/Product/";
     getAllproducts()
     {
       return this.http.get<Product[]>(this.urlGetAllProduct);
@@ -34,6 +35,6 @@ export class ProductService {
       return this.http.put(this.url+'%$id',p)
     }
     deleteProduct(id:number){
-      return this.http.delete(this.url+'%$id');
+      return this.http.delete<Product>(this.urldelete+'%$id');
     }
 }

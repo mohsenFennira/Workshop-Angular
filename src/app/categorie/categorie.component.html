@@ -1,0 +1,11 @@
+
+<table class="table table-striped">
+  <tbody *ngIf="condition<2">
+    <td>{{item.id}}</td>
+    <td>{{item.title}}</td>
+    <td>{{item.price}}</td>
+    <td>{{item.quantity}}</td>
+    <td>{{item.likes}}</td>
+    <td><button (click)="eventChild()"></button></td>
+  </tbody>
+</table>

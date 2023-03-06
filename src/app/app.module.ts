@@ -11,6 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ErrorComponent } from './error/error.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { from } from 'rxjs';
+import { CategorieComponent } from './categorie/categorie.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { from } from 'rxjs';
     DetailsProductsComponent,
     ContactComponent,
     ErrorComponent,
-    AddProductComponent
+    AddProductComponent,
+    CategorieComponent
   ],
   imports: [
     BrowserModule,

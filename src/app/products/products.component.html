@@ -1,4 +1,5 @@
-<table class="table table-striped">
+
+  <table class="table table-striped">
   <thead>
     <tr>
     <td> id </td>
@@ -8,17 +9,22 @@
     <td> like </td>
     <td> Liked </td>
     <td> Buy </td>
+    <td>Delete</td>
     </tr>
   </thead>
   <tbody>
+
     <tr *ngFor="let p of product">
-    <td>{{p.id}}</td>
+    <!-- <td>{{p.id}}</td>
     <td>{{p.title}}</td>
     <td>{{p.price}}</td>
     <td>{{p.quantity}}</td>
     <td>{{p.likes}}</td>
     <td><button class="btn btn-primary" (click)="like(p)">LIKE</button></td>
     <td><button class="btn btn-success" (click)="buy(p)" [disabled]="p.quantity==0">BUY</button></td>
+    <button (click)="DeleteProduct(p.id)">Delete</button>
+    -->
+    <app-categorie [item]="p"[condition]="p.price"/>
     </tr>
   </tbody>
 </table>
